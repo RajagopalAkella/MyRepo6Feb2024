@@ -24,6 +24,7 @@ node {
 		println 'Source checkout done'
     }
 
+withEnv(["HOME=${env.WORKSPACE}"]) {
     withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
 		println 'Entered into with cred'
         stage('Deploy Code') {
@@ -55,4 +56,5 @@ node {
             println(rmsg)
         }
     }
+}
 }
