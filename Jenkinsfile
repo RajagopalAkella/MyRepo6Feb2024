@@ -11,6 +11,11 @@ node {
     def JWT_KEY_CRED_ID = env.JWT_CRED_ID_DH
     def CONNECTED_APP_CONSUMER_KEY=env.CONNECTED_APP_CONSUMER_KEY_DH
 
+	println 'echo'
+	echo "${env.getEnvironment()}" 
+	println 'echo'
+
+
     println 'KEY IS' 
     println JWT_KEY_CRED_ID
     println HUB_ORG
@@ -18,9 +23,6 @@ node {
     println CONNECTED_APP_CONSUMER_KEY
     def toolbelt = tool 'toolbelt'
 
-	println 'echo'
-	echo "${env.getEnvironment()}" 
-	println 'echo'
 
     stage('checkout source') {
         // when running in multi-branch job, one must issue this command
