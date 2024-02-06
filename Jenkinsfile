@@ -18,13 +18,18 @@ node {
     println CONNECTED_APP_CONSUMER_KEY
     def toolbelt = tool 'toolbelt'
 
+	println 'echo'
+	echo "${env.getEnvironment()}" 
+	println 'echo'
+
     stage('checkout source') {
         // when running in multi-branch job, one must issue this command
         checkout scm
 		println 'Source checkout done'
     }
 
-withEnv(["HOME=${env.WORKSPACE}"]) {
+
+// withEnv(["HOME=${env.WORKSPACE}"]) {
     withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
 		println 'Entered into with cred'
         stage('Deploy Code') {
@@ -56,5 +61,5 @@ withEnv(["HOME=${env.WORKSPACE}"]) {
             println(rmsg)
         }
     }
-}
+// }
 }
