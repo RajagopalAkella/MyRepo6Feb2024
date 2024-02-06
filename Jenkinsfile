@@ -48,7 +48,7 @@ node {
 			}else{
 				println 'unable to pull'
 			   //rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -d force-app/. -u ${HUB_ORG}"
-               rmsg = bat returnStdout: true, script: "\"${toolbelt}\" project deploy start --source-dir force-app/"
+               rmsg = bat returnStdout: true, script: "\"${toolbelt}\" project deploy start --source-dir force-app/ -u ${HUB_ORG}"
 			}
 			
 			println 'printing rmsg'
