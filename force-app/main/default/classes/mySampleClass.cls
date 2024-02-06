@@ -1,5 +1,5 @@
 public with sharing class mySampleClass {
     public void mySampleClass() {
-        System.System.debug("This is a debug statement");
+        System.System.debug("Hello world");
     }
 }
