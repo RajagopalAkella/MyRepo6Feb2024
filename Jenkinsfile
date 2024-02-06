@@ -12,7 +12,7 @@ node {
     def CONNECTED_APP_CONSUMER_KEY=env.CONNECTED_APP_CONSUMER_KEY_DH
 
 	println 'echo'
-	echo "${env.getEnvironment()}" 
+	println env 
 	println 'echo'
 
 
